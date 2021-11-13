@@ -5,15 +5,8 @@ export class Vehiculo extends Entity {
   @property({
     type: 'string',
     id: true,
-    generated: true,
   })
-  id?: string;
-
-  @property({
-    type: 'string',
-    required: true,
-  })
-  placa: string;
+  placa?: string;
 
   @property({
     type: 'string',

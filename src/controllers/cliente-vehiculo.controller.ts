@@ -15,16 +15,14 @@ import {
   post,
   requestBody,
 } from '@loopback/rest';
-import {
-  Cliente,
-  Vehiculo,
-} from '../models';
+import {Cliente, Vehiculo} from '../models';
 import {ClienteRepository} from '../repositories';
 
 export class ClienteVehiculoController {
   constructor(
-    @repository(ClienteRepository) protected clienteRepository: ClienteRepository,
-  ) { }
+    @repository(ClienteRepository)
+    protected clienteRepository: ClienteRepository,
+  ) {}
 
   @get('/clientes/{id}/vehiculos', {
     responses: {
@@ -60,12 +58,12 @@ export class ClienteVehiculoController {
         'application/json': {
           schema: getModelSchemaRef(Vehiculo, {
             title: 'NewVehiculoInCliente',
-            exclude: ['id'],
-            optional: ['idCliente']
+            optional: ['idCliente'],
           }),
         },
       },
-    }) vehiculo: Omit<Vehiculo, 'id'>,
+    })
+    vehiculo: Omit<Vehiculo, 'id'>,
   ): Promise<Vehiculo> {
     return this.clienteRepository.vehiculos(id).create(vehiculo);
   }
@@ -88,7 +86,8 @@ export class ClienteVehiculoController {
       },
     })
     vehiculo: Partial<Vehiculo>,
-    @param.query.object('where', getWhereSchemaFor(Vehiculo)) where?: Where<Vehiculo>,
+    @param.query.object('where', getWhereSchemaFor(Vehiculo))
+    where?: Where<Vehiculo>,
   ): Promise<Count> {
     return this.clienteRepository.vehiculos(id).patch(vehiculo, where);
   }
@@ -103,7 +102,8 @@ export class ClienteVehiculoController {
   })
   async delete(
     @param.path.string('id') id: string,
-    @param.query.object('where', getWhereSchemaFor(Vehiculo)) where?: Where<Vehiculo>,
+    @param.query.object('where', getWhereSchemaFor(Vehiculo))
+    where?: Where<Vehiculo>,
   ): Promise<Count> {
     return this.clienteRepository.vehiculos(id).delete(where);
   }
