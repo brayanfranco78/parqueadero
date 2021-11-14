@@ -4,3 +4,6 @@ export * from './vehiculo-solicitud-visita.controller';
 export * from './lugar-parqueo-solicitud-visita.controller';
 export * from './lugar-parqueo.controller';
 export * from './solicitud-visita.controller';
+export * from './dueno-local-regsitro-visita.controller';
+export * from './dueno-local-local.controller';
+export * from './dueno-local.controller';
