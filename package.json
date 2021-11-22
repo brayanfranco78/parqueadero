@@ -1,0 +1,19 @@
+{
+  "name": "parqueadero",
+  "version": "1.0.0",
+  "description": "ciclo 4 grupo cinc talents",
+  "main": "servidor.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/JuanDa237/parqueadero.git"
+  },
+  "author": "Rusbel Gaviria D",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JuanDa237/parqueadero/issues"
+  },
+  "homepage": "https://github.com/JuanDa237/parqueadero#readme"
+}
